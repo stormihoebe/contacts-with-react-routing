@@ -6,6 +6,15 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Row = styled.section`
+display: flex;
+flex-direction: row;
+`;
+const Column = styled.section`
+width: 50vw;
+`;
 
 const Links = () =>(
   <nav>
@@ -23,7 +32,13 @@ const Home = () =>(
 const Contacts = () =>(
 <div>
   <h1>Contact List</h1>
-  <ContactList/>
+  <Row>
+    <Column>
+      <ContactList/>
+    </Column>
+    <Column>
+    </Column>
+  </Row>
 
 </div>
   );

@@ -1,15 +1,19 @@
 import React from 'react';
 import contacts from './generated.json';
+var contact;
 
 
 function ContactInfo(props){
+
   return (
+
     <div>
-      <img src={props.picture} alt="picture of {props.name}"/>
-      <h1>{props.name}</h1>
-      <p>{props.email}</p>
-      <p>{props.phone}</p>
-      <p>{props.address}</p>
+      <h1>{props.id}</h1>
+      <img src={contact.picture} alt="{contact.name}"/>
+      <h1>{contact.name}</h1>
+      <p>{contact.email}</p>
+      <p>{contact.phone}</p>
+      <p>{contact.address}</p>
     </div>
   );
 }
