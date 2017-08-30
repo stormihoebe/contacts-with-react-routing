@@ -1,17 +1,43 @@
 import React, { Component } from 'react';
+
+import ContactList from './components/ContactList';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Link
 } from 'react-router-dom';
-import ContactList from './components/ContactList';
 
+const Links = () =>(
+  <nav>
+    <Link to={'/'}>Home</Link>
+    <Link to ={'/contacts'}>Contact List</Link>
+  </nav>
+);
+const Home = () =>(
+<div>
+  <h1>Home</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</div>
+  );
+const Contacts = () =>(
+<div>
+  <h1>Contact List</h1>
+  <ContactList/>
+
+</div>
+  );
 class App extends Component {
   render() {
     return (
-    <ContactList>
+      <BrowserRouter>
+        <div>
+          <Links/>
+          <Route exact path ="/" component={Home} />
+          <Route path="/contacts" component={Contacts}/>
+        </div>
+      </BrowserRouter>
 
-    </ContactList>
     );
   }
 }
